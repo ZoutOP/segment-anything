@@ -10,7 +10,7 @@ import torch
 #fix
 from torch.multiprocessing import set_start_method
 try:
-     set_start_method('spawn')
+     set_start_method('spawn', force=True)
 except RuntimeError:
     pass
     
