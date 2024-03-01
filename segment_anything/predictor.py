@@ -7,6 +7,13 @@
 import numpy as np
 import torch
 
+#fix
+from torch.multiprocessing import set_start_method
+try:
+     set_start_method('spawn')
+except RuntimeError:
+    pass
+    
 from segment_anything.modeling import Sam
 
 from typing import Optional, Tuple
