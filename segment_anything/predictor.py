@@ -57,6 +57,7 @@ class SamPredictor:
         input_image = self.transform.apply_image(image)
         print('getting start method...')
         print(torch.multiprocessing.get_start_method())
+        print(self.device)
         input_image_torch = torch.as_tensor(input_image, device=self.device)
         input_image_torch = input_image_torch.permute(2, 0, 1).contiguous()[None, :, :, :]
 
